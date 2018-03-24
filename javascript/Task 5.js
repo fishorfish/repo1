@@ -13,3 +13,4 @@ function getRandom(min, max) {
 
 function isSamePair(a, b, c) {
 	return a === b || a === c || b === c;
+}
