@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var x = getRandom(998, 1000);
+=======
+var x = getRandom(-999, 1000);
+>>>>>>> 36a1626ecff91ecc44b403fe617012acecc32f46
 console.log(x);
 describeNumber(x);
 
