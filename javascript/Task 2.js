@@ -1,4 +1,4 @@
-var x = getRandom(998, 1000);
+var x = getRandom(-999, 1000);
 console.log(x);
 describeNumber(x);
 
