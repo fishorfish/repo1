@@ -3,7 +3,7 @@ var y = 2;
 alert(x, y);
 
 if(x>y) {
-	swap(x, y);
+	swap();
 	alert(x, y);
 } 
 
