@@ -7,9 +7,10 @@ var student = {
 	university: "ITMO",
 };
 
-function studentProperies(Object) {
-	 for(var propName in Object) {
-	 	console.log(Object[propName]);
+studentProperies(student);
+
+function studentProperies(student) {
+	 for(var propName in student) {
+	 	console.log(student[propName]);
 	 }
 }
-studentProperies(student);
