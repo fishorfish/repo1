@@ -1,16 +1,18 @@
-var a = prompt("Введите количество чисел Фибоначчи");
-  for (i = 0; i <= a; i++) {
-    console.log(fibonacci(i));
+var inputNumber = prompt("Введите количество чисел Фибоначчи");
+printFibonacciNumbers(inputNumber);
+
+function printFibonacciNumbers(quantity) {
+  for (i = 0; i < quantity; i++) {
+    console.log(getFibonacciNumberByIndex(i));
   }
+}
 
-
-function fibonacci(i) { 
-  if (i <= 0) {
+function getFibonacciNumberByIndex(index) { 
+  if (index <= 0) {
     return 0;
-  } else if (i == 1 || i == 2) {
+  } else if (index == 1 || index == 2) {
     return 1;
-  } else {
-      return fibonacci(i - 1) + fibonacci(i - 2);
+  } else { 
+      return getFibonacciNumberByIndex(index - 1) + getFibonacciNumberByIndex(index - 2);
+  }
 }
-}
-
