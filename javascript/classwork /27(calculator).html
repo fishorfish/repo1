@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		td {
+			height: 60px;
+			width: 60px;
+			border: solid 2px black;
+			text-align: center;
+		}
+		input {
+			/*background-color: grey;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="calculator">
+		<input disabled>
+		<table>
+			<tbody>
+				<tr>
+					<td>C</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>/</td>
+
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>*</td>
+
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>-</td>
+
+				</tr>
+				<tr>
+					<td>0</td>
+					<td>.</td>
+					<td>=</td>
+					<td>+</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		function handler() {
+			var tdVal = this.innerHTML;
+			var elInput = calculator.getElementsByTagName('input')[0];
+			switch(tdVal) {
+				case "C":
+					elInput.value = "";
+					break;
+				case "=":
+					elInput.value = eval(elInput.value);
+					break;
+				default:
+				elInput.value += tdVal;
+			}
+		}
+
+		var tds = calculator.getElementsByTagName('td');
+		for(var i = 0; i < tds.length; i++) {
+			tds[i].onclick = handler;
+		}
+	</script>
+</body>
+</html>

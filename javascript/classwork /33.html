@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box" style="height:500px; width:500px">
+		
+	</div>
+
+	<script>
+
+function Iterator(_from, _to) {
+	this._from = _from;
+	this._to = _to;
+
+	var curr = _from;
+
+	this.next = function() {
+		if(this._from < this._to) {
+			curr++;
+		} else if (this._from > this._to) {
+			curr--;
+		}
+		return curr;
+	}
+}
+function IteratorSecondGeneration(_from, _to) {
+	Iterator.call(this, _from, _to);
+
+	this.nextSecondGeneration = function() {
+		var num = this.next();
+		if(num === this._to) {
+			var temp = this._to;
+			this._to = this._from;
+			this._from = temp;
+		}
+		return num;
+	}
+}
+
+var myIterator1 = new IteratorSecondGeneration(0,230);
+var myIterator2 = new IteratorSecondGeneration(0,255);
+var myIterator3 = new IteratorSecondGeneration(0,245);
+
+setInterval(function() {
+	box.style.backgroundColor = 'rgb('+ 
+		myIterator1.nextSecondGeneration() + ',' + 
+		myIterator2.nextSecondGeneration() + ',' + 
+		myIterator3.nextSecondGeneration() + ')'; 
+},15);
+
+function User(name) {
+	if(name === undefined) {
+		this.name = "Anonim";
+	} else {
+		this.name = name;
+	}
+	
+	this.toString = function() {
+		return "Hi, i " + this.name;
+	}
+}
+var anon = new User();
+var user = new User('Ira');
+alert(anon);
+alert(user);
+
+	</script>
+	
+</body>
+</html>
