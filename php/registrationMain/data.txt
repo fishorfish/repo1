@@ -1,0 +1,2 @@
+login=dimon&pass=$2y$10$yt/9.cpJSad0yk2i8GrRM.pCJyOezMJQnCl9GGmXYW8WHr/g3DSuC
+login=cc&pass=$2y$10$qp7P5T.w/nrigR96AUz0p.Bzk/sprVbKhPKdCExWNVpj5RfStW3RG
