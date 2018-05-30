@@ -8,39 +8,38 @@
 	$operation = $post['operation'];
 	$errors = array();
 
-	if($user == '') {
+	if ($user == '') {
 		$errors[] = 'Enter login';
 	}
-	if($pass == '') {
+	if ($pass == '') {
 		$errors[] = 'Enter password';
 	}
 
-	if($operation == "authorization") {
-		if(empty($errors)) {
+	if ($operation == "authorization") {
+		if (empty($errors)) {
 			$str = is_username_in_file($user);
-			if(empty($str)) {
+			if (empty($str)) {
 				echo '<div style="color: red;">'."This user is not exist".'</div><hr>';
-			}else {
-				//echo $str[1];
+			} else {
 				
 				if (password_verify($pass, $str[1])){ 
 					$_SESSION['logged_user'] = $user;
             		echo '<div style="color: green;">Authorization succes</div><hr>';
-        		}else {
+        		} else {
         			echo '<div style="color: red;">'."Uncorrect password!".'</div><hr>';
         		}
 			}
 		} else {
 			echo '<div style="color: red;">'.array_shift($errors).'</div><hr>';
 		}
-	}else if($operation == "register") {
+	} else if($operation == "register") {
 
 		$data = file_get_contents('data.txt');
-		if(preg_match('/login='."$user".'/', $data)) {
+		if (preg_match('/login='."$user".'/', $data)) {
 			$errors[] = 'This login is already taken';
 		}
 
-		if(empty($errors)) {
+		if (empty($errors)) {
 			$hash_pass = password_hash($pass, PASSWORD_DEFAULT);
 			$pair = $user.";".$hash_pass.PHP_EOL;
 			file_put_contents('data.txt', "$pair", FILE_APPEND);
@@ -48,6 +47,6 @@
 		} else {
 			echo '<div style="color: red;">'.array_shift($errors).'</div><hr>';
 		}
-	}else {
+	} else {
 		echo '<div style="color: red;">'."Operation not supported".'</div><hr>';
 	}
