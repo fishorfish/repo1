@@ -1,2 +1,3 @@
-login=dimon&pass=$2y$10$yt/9.cpJSad0yk2i8GrRM.pCJyOezMJQnCl9GGmXYW8WHr/g3DSuC
-login=cc&pass=$2y$10$qp7P5T.w/nrigR96AUz0p.Bzk/sprVbKhPKdCExWNVpj5RfStW3RG
+test;$2y$10$Dr/YYXZbIWV6mADUhdDuje9XL/nSSNaxmzKM4oB8zrth71dsdb3JC
+qwerty;$2y$10$Bx.q5HydLPTnWjuaU5SWu.SVmF5drDysNo3XCE.ceg4O1Zq8gDY8u
+poiu;$2y$10$ZHHOv0zBX9j37NQZrjJkWu0fnfKcyDLDidYZSmefw9VZ0hbA6UK6u
