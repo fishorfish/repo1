@@ -1,0 +1,63 @@
+
+
+.flip-container {
+perspective: 1000;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+width: 320px;
+height: 480px;
+padding-right: 100px;
+margin-right: 50px;
+}
+
+.flip-container {
+display: table-cell;
+height: 480px;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: stretch;
+padding-left: 0px;
+ background-size: 90%
+ background-image: url('https://24tv.ua/resources/photos/news/610x344_DIR/201705/823216.jpg?201705163448');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.flipper {
+transition: 0.9s;
+transform-style: preserve-3d;
+position: relative;
+
+}
+
+.front, .back {
+backface-visibility: hidden;
+position: absolute;
+top: 0;
+left: 0;
+margin-left: 700px;
+}
+
+.front {
+z-index: 2;
+padding-left: 20px;
+text-align: center;
+}
+
+.back {
+transform: rotateY(180deg);
+height: 100%;
+  overflow: visible;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.25s;
+
+}
+
+
